@@ -43,21 +43,21 @@
 ```json
 {
   "name": "lookup_customer",
-  "description": "通过邮箱、电话或账户ID搜索客户。返回客户资料，包括姓名、账户状态和订单历史摘要。输入：恰好传入 email、phone 或 account_id 三者之一。邮箱必须包含 @。电话须为 E.164 格式（如 +15551234567）。账户 ID 须以 ACC- 开头。返回：客户对象，若未找到则返回空数组。注意：空结果表示客户不存在，这并非错误。",
+  "description": "Search for a customer by email, phone, or account ID. Returns a customer profile including name, account status, and order history summary. Input: Pass exactly one of email, phone, or account_id. Email must contain @. Phone must be in E.164 format (e.g. +15551234567). Account ID must start with ACC-. Returns: Customer object or empty array if not found. Note: an empty result means the customer does not exist - this is not an error.",
   "input_schema": {
     "type": "object",
     "properties": {
       "email": {
         "type": "string",
-        "description": "客户邮箱地址（必须包含 @）"
+        "description": "Customer email address (must contain @)"
       },
       "phone": {
         "type": "string",
-        "description": "E.164 格式电话，如 +15551234567"
+        "description": "Phone in E.164 format, e.g. +15551234567"
       },
       "account_id": {
         "type": "string",
-        "description": "以 ACC- 开头的账户ID，如 ACC-12345"
+        "description": "Account ID starting with ACC-, e.g. ACC-12345"
       }
     }
   }
@@ -122,10 +122,10 @@
     "errorCategory": "timeout",
     "isRetryable": true,
     "context": {
-      "attempted": "通过邮箱查找客户: user@example.com",
+      "attempted": "Lookup customer by email: user@example.com",
       "service": "customer-database",
       "timeout_ms": 5000,
-      "suggestion": "2秒后重试，或尝试通过账户ID查找"
+      "suggestion": "Retry in 2s, or try lookup by account ID instead"
     }
   },
   "empty_result_example": {

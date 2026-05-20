@@ -35,32 +35,32 @@
 
 ```
 ~/.claude/
-  CLAUDE.md                    # 用户级（个人使用，不共享）
-    "使用 vim 键绑定"
-    "偏好深色主题输出"
+  CLAUDE.md                    # User-level (personal use, not shared)
+    "Use vim keybindings"
+    "Prefer dark theme output"
 
 project/
   .claude/
-    CLAUDE.md                  # 项目级（通过 git 共享）
-      "使用 TypeScript 严格模式"
-      "遵循 ESLint airbnb 配置"
+    CLAUDE.md                  # Project-level (shared via git)
+      "Use TypeScript strict mode"
+      "Follow ESLint airbnb config"
       "@import ./rules/api-design.md"
     rules/
-      typescript.md            # 自动加载的规则文件
-      testing.md               # 自动加载的规则文件
-      api-design.md            # 由 CLAUDE.md 引入
+      typescript.md            # Auto-loaded rule files
+      testing.md               # Auto-loaded rule files
+      api-design.md            # Imported by CLAUDE.md
     commands/
-      review.md                # /review 斜杠命令
-      deploy.md                # /deploy 斜杠命令
+      review.md                # /review slash command
+      deploy.md                # /deploy slash command
     skills/
       refactor/
-        SKILL.md               # 重构技能（forked 上下文）
+        SKILL.md               # Refactor skill (forked context)
 
   src/
     api/
-      CLAUDE.md                # 目录级（限定作用域的规则）
-        "所有端点必须验证 auth token"
-        "使用 Zod schema 进行请求验证"
+      CLAUDE.md                # Directory-level (scoped rules)
+        "All endpoints must validate auth token"
+        "Use Zod schemas for request validation"
 ```
 
 ### 对比：反模式 vs 正确做法
@@ -121,7 +121,7 @@ allowed-tools:
   - Read
   - Edit
   - Grep
-argument-hint: "要重构的文件或目录"
+argument-hint: "file or directory to refactor"
 ---
 ```
 
